@@ -20,9 +20,9 @@ services:
       - 'redis'
       - 'website'
     build: .
-    command: bash start_jobs
+    command: bash start_jobs.sh
     volumes:
-      - '.:/nosso_amigo_secreto'
+      - '.:/my_favorite_friend'
     volumes_from:
       - box
 
@@ -31,11 +31,11 @@ services:
       - 'postgres'
       - 'redis'
     build: .
-    command: bash start
+    command: bash start.sh
     ports:
       - '3000:3000'
     volumes:
-      - '.:/nosso_amigo_secreto'
+      - '.:/my_favorite_friend'
     volumes_from:
     - box
 
@@ -43,6 +43,12 @@ services:
     image: busybox
     volumes:
       - /box
+
+  mailcatcher:
+    image: yappabe/mailcatcher
+    ports:
+      - 1025:1025
+      - 1080:1080
 
 volumes:
   redis:
