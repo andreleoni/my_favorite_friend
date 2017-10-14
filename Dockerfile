@@ -2,7 +2,7 @@ FROM ruby:2.3-slim
 
 # Instala nossas dependencias
 RUN apt-get update && apt-get install -qq -y --no-install-recommends \
-      build-essential nodejs libpq-dev imagemagick
+      build-essential nodejs libpq-dev imagemagick vim
 
 # Seta nosso path
 ENV INSTALL_PATH /my_favorite_friend
