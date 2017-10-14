@@ -168,3 +168,4 @@ RSpec.describe CampaignsController, type: :controller do
       end
     end
   end
+end
