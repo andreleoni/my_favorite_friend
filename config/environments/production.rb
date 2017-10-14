@@ -45,7 +45,6 @@ Rails.application.configure do
   # Use the lowest log level to ensure availability of diagnostic information
   # when problems arise.
   config.log_level = :debug
-  config.action_mailer.default_url_options = { :host => 'http://localhost:3000' }
 
   # Prepend all log lines with the following tags.
   config.log_tags = [ :request_id ]
@@ -72,7 +71,7 @@ Rails.application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
 
-#  config.action_mailer.default_url_options = { :host => request.host_with_port }
+  config.action_mailer.default_url_options = { :host => 'http://127.0.0.1:3000' }
   config.action_mailer.delivery_method = :smtp
 
   config.action_mailer.raise_delivery_errors = true
